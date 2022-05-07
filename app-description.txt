@@ -1,0 +1,5 @@
+-ecommerce app for car dealers
+-using tiktok style of displaying posts to display videos of cars for sale
+-act as mediator in negotiating deals; follow dealers and buyers to see and inspect the cars physically
+-freemium model for dealers; sell 3 cars for free, then subscribe every month to showcase your business
+-
