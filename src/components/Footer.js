@@ -1,5 +1,4 @@
 import moment from "moment";
-import logo from '../assets/img/logo.png';
 
 export default function Footer(props){
    let today = moment();
