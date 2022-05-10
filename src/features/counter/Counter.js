@@ -8,6 +8,9 @@ import {
   decrementAsync,
   incrementIfOdd,
   selectCount,
+  decrementIfOdd,
+  decrementIfEven,
+  incrementIfEven,
 } from './counterSlice';
 import styles from './Counter.module.css';
 
@@ -62,11 +65,34 @@ export function Counter() {
         >
           Subtract Async
         </button>
-        <button
+        
+      </div>
+      <div className={styles.row}>
+      <button
           className={styles.button}
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
-          Add If Odd
+          Increment If Odd
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(decrementIfOdd(incrementValue))}
+        >
+          Decrement If Odd
+        </button>
+      </div>
+      <div className={styles.row}>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(incrementIfEven(incrementValue))}
+        >
+          Increment If Even
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(decrementIfEven(incrementValue))}
+        >
+          Decrement If Even
         </button>
       </div>
     </div>
