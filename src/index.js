@@ -7,6 +7,7 @@ import App from './App';
 import Index from './routes';
 import ContactView from './routes/contact';
 import LoginView from './routes/login';
+import SampleView from './routes/sample';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
@@ -23,6 +24,7 @@ root.render(
         <Route path="contact" element={<ContactView/>}/>
         <Route path="login" element={<LoginView/>}/>
       </Route>
+      <Route path="sample" element={<SampleView/>}/>
       
     </Routes>
     </BrowserRouter>

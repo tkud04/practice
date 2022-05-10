@@ -12,10 +12,18 @@ const initialState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
+  'counter/incrementAsync',
   async (amount) => {
     const response = await fetchCount(amount);
     // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
+
+export const decrementAsync = createAsyncThunk(
+  'counter/decrementAsync',
+  async (amount) => {
+    const response = await fetchCount(amount);
     return response.data;
   }
 );
@@ -50,7 +58,14 @@ export const counterSlice = createSlice({
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value += action.payload;
+      })
+      .addCase(decrementAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(decrementAsync.fulfilled, (state,action) => {
+        state.value -= action.payload;
       });
+
   },
 });
 
@@ -69,5 +84,7 @@ export const incrementIfOdd = (amount) => (dispatch, getState) => {
     dispatch(incrementByAmount(amount));
   }
 };
+
+//console.log(counterSlice.actions.incrementByAmount(5));
 
 export default counterSlice.reducer;
