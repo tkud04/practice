@@ -6,6 +6,7 @@ import { store } from './app/store';
 import App from './App';
 import Index from './routes';
 import ContactView from './routes/contact';
+import LoginView from './routes/login';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
@@ -20,6 +21,7 @@ root.render(
       <Route path="/" element={<App/>}>
       <Route path="/" element={<Index/>}/>
         <Route path="contact" element={<ContactView/>}/>
+        <Route path="login" element={<LoginView/>}/>
       </Route>
       
     </Routes>
